@@ -341,34 +341,34 @@ p {
     gap: 1.25rem;
 }
 
-.service-item {
+.services-section .service-item {
     display: flex;
     flex-direction: column; /* stack icon, title, description vertically */
     align-items: flex-start;
     gap: 0.5rem;
     padding: 1.25rem 1.5rem;
-    background: #FFFFFF;
+    background: #FFFFFF; /* homepage services keep white cards */
     border-radius: 12px;
     border: 1px solid #e5e7eb;
     transition: all 0.25s ease;
 }
 
-.service-item .icon {
+.services-section .service-item .icon {
     margin-bottom: 0.25rem; /* breathing room under icon */
 }
 
-.service-item:hover {
+.services-section .service-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-.service-item h4 {
+.services-section .service-item h4 {
     margin-bottom: 0.25rem;
     color: #111827 !important;
     font-size: 1.1rem;
 }
 
-.service-item p {
+.services-section .service-item p {
     margin-bottom: 0;
     color: #374151 !important;
     line-height: 1.5;
@@ -804,3 +804,227 @@ p {
 }
 
 .interactive-card:hover .portfolio-image > .portfolio-overlay { opacity: 1; } 
+
+/* About Page (restore) */
+.about-story-section,
+.mission-values-section,
+.why-choose-section,
+.process-section,
+.industries-section { padding: 100px 0; }
+
+.story-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	align-items: start;
+}
+
+.story-text p { 
+	color: #E5E7EB; 
+	margin-bottom: 1.1rem; 
+	line-height: 1.65; 
+}
+
+.story-image {
+	position: relative;
+	overflow: hidden;
+	border-radius: 16px;
+	box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.story-image img {
+	width: 100%;
+	height: 420px;
+	object-fit: cover;
+}
+
+.image-overlay {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background: linear-gradient(135deg, rgba(236,72,153,0.25) 0%, rgba(74,144,226,0.25) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.overlay-content { 
+	text-align: center; 
+	color: #fff; 
+}
+.overlay-content i { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.overlay-content p { margin: 0; color: rgba(255,255,255,0.9); }
+
+.story-image:hover .image-overlay,
+.interactive-card:hover .image-overlay { opacity: 1; }
+
+/* Mission & Values */
+.values-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+}
+
+.value-card {
+	padding: 1.75rem;
+	text-align: center;
+}
+
+.value-card h3 { margin-top: 1rem; margin-bottom: 0.5rem; }
+.value-card p { color: #E5E7EB; }
+
+/* Why Choose Us */
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+}
+
+/* Process */
+.process-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+}
+
+.process-step {
+	background: #151515;
+	border: 1px solid #262626;
+	border-radius: 16px;
+	padding: 1.75rem;
+	box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+
+.step-number {
+	font-size: 2rem;
+	font-weight: 700;
+	background: linear-gradient(135deg, #4A90E2 0%, #EC4899 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	margin-bottom: 0.75rem;
+}
+
+.step-content h3 { margin-bottom: 0.5rem; }
+.step-content p { color: #E5E7EB; }
+
+/* Industries */
+.industries-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1.25rem;
+}
+
+.industry-card {
+	background: #151515;
+	border: 1px solid #262626;
+	border-radius: 16px;
+	padding: 1.5rem;
+	text-align: center;
+	box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+
+.industry-icon {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto 0.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 14px;
+	background: linear-gradient(135deg, #4A90E2 0%, #EC4899 100%);
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+/* About page responsive */
+@media (max-width: 992px) {
+	.story-content { grid-template-columns: 1fr; gap: 2rem; }
+	.story-image img { height: 360px; }
+}
+
+@media (max-width: 600px) {
+	.story-image img { height: 280px; }
+}
+
+/* Services Page (restore) */
+.services-overview-section { padding: 100px 0; }
+
+.services-overview-section .service-card {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	background: #151515; /* enforce dark card for overview */
+	border: 1px solid #262626;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.services-overview-section .service-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.service-card h3 { margin: 0.75rem 0 0.25rem; color: #FFFFFF; }
+.service-card p { color: #E5E7EB; }
+.services-overview-section .service-card .feature-list li { color: #E5E7EB; }
+
+.feature-list {
+	list-style: none;
+	margin: 0.75rem 0 0;
+	padding: 0;
+	display: grid;
+	gap: 0.5rem;
+}
+
+.feature-list li { color: #E5E7EB; }
+
+.service-detail-section { padding: 100px 0; }
+
+.service-header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.service-intro p { color: #E5E7EB; }
+
+.service-items-grid { margin-top: 1rem; }
+
+.service-icon { margin-bottom: 0.5rem; }
+
+/* Service detail cards: use dark cards for consistency */
+.service-detail-section .service-item {
+	background: #151515;
+	border: 1px solid #262626;
+}
+
+.service-detail-section .service-item h3 { color: #FFFFFF !important; }
+.service-detail-section .service-item .service-content p { color: #E5E7EB !important; }
+.service-detail-section .service-item .feature-list li { color: #E5E7EB !important; }
+
+/* Pricing */
+.pricing-section { padding: 100px 0; }
+
+.pricing-grid { margin-top: 1rem; }
+
+.pricing-card { padding: 1.75rem; }
+
+.pricing-card .package-header h3 { margin-bottom: 0.25rem; }
+.pricing-card .package-header p { color: #E5E7EB; }
+
+.pricing-card .feature-list li { color: #E5E7EB; }
+
+.pricing-card.featured {
+	border: 1px solid rgba(236, 72, 153, 0.5);
+	box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+}
+
+.package-cta { margin-top: 1rem; text-align: center; }
+
+/* Services responsive */
+@media (max-width: 768px) {
+	.service-header { flex-direction: column; align-items: flex-start; }
+}
