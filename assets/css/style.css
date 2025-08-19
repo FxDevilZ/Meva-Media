@@ -466,14 +466,54 @@ p {
 }
 
 /* Contact Section */
-.contact-item {
-    background: #151515;
+.contact-section { padding: 100px 0; }
+
+.contact-content {
+	display: grid;
+	grid-template-columns: 1.1fr 1fr;
+	gap: 2rem;
+	align-items: stretch;
 }
 
-.contact-form {
-    background: #151515;
-    border-color: #262626;
+.contact-info {
+	display: grid;
+	gap: 1rem;
+	background: #151515;
+	border: 1px solid #262626;
+	border-radius: 16px;
+	padding: 1.5rem;
 }
+
+.contact-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 1.25rem;
+	background: #151515;
+	border: 1px solid #262626;
+	border-radius: 12px;
+}
+
+.contact-item h4 { margin-bottom: 0.25rem; }
+
+.contact-form {
+	background: #151515;
+	border: 1px solid #262626;
+	border-radius: 16px;
+	padding: 1.5rem;
+}
+
+.contact-form form { display: grid; gap: 1rem; }
+
+.contact-form .form-group input,
+.contact-form .form-group select,
+.contact-form .form-group textarea {
+	padding: 12px 14px;
+	border-radius: 10px;
+	border: 1px solid #1F2937;
+}
+
+.contact-form .btn { width: 100%; }
 
 .form-group input,
 .form-group select,
@@ -1105,4 +1145,9 @@ details.service-details .service-items-grid {
 /* Services responsive */
 @media (max-width: 768px) {
 	.service-header { flex-direction: column; align-items: flex-start; }
+}
+
+/* Contact responsive */
+@media (max-width: 900px) {
+	.contact-content { grid-template-columns: 1fr; }
 }
