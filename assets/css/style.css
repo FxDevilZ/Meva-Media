@@ -847,6 +847,35 @@ p {
 
 .interactive-card:hover .portfolio-image > .portfolio-overlay { opacity: 1; } 
 
+/* Portfolio pages (archive/single) */
+.portfolio-hero {
+	position: relative;
+	padding-top: 100px;
+	overflow: hidden;
+	background: #0A0A0A;
+}
+
+.portfolio-hero .portfolio-hero-content { position: relative; z-index: 2; padding: 60px 0; }
+
+.portfolio-hero .breadcrumb { color: #E5E7EB; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.portfolio-hero .breadcrumb a { color: #E5E7EB; text-decoration: none; }
+
+.portfolio-hero .portfolio-title { margin-bottom: 0.5rem; }
+.portfolio-hero .portfolio-subtitle { color: #E5E7EB; max-width: 800px; }
+
+.portfolio-hero-image { position: absolute; inset: 0; z-index: 1; opacity: 0.25; }
+.portfolio-hero-image img { width: 100%; height: 320px; object-fit: cover; }
+
+.filter-section .filter-content { display: flex; flex-direction: column; gap: 1rem; }
+.filter-section .filter-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.filter-stats { color: #9CA3AF; }
+
+.portfolio-grid-section .portfolio-grid { margin-top: 1rem; }
+
+/* Smooth hide/show for filtered items */
+.portfolio-item.hidden { opacity: 0; transform: scale(0.98); transition: opacity 0.3s ease, transform 0.3s ease; }
+.portfolio-item { transition: opacity 0.3s ease, transform 0.3s ease; }
+
 /* About Page (restore) */
 .about-story-section,
 .mission-values-section,
@@ -1057,7 +1086,10 @@ p {
 .service-detail-section .service-item {
 	background: #151515;
 	border: 1px solid #262626;
+	padding: 1.5rem;
 }
+
+.service-detail-section .service-card { padding: 1.5rem; }
 
 .service-detail-section .service-item h3 { color: #FFFFFF !important; }
 .service-detail-section .service-item .service-content p { color: #E5E7EB !important; }
@@ -1143,6 +1175,42 @@ details.service-details .service-items-grid {
 }
 
 .package-cta { margin-top: 1rem; text-align: center; }
+
+/* Bundle emphasis */
+.section-badge {
+	display: inline-block;
+	padding: 6px 12px;
+	border-radius: 9999px;
+	background: linear-gradient(135deg, #4A90E2 0%, #EC4899 100%);
+	color: #0A0A0A;
+	font-weight: 700;
+	font-size: 0.85rem;
+	margin-bottom: 0.5rem;
+}
+
+.pricing-grid + .package-cta .btn-primary {
+	box-shadow: 0 10px 30px rgba(236,72,153,0.2);
+}
+
+.pricing-card.featured {
+	position: relative;
+}
+
+.pricing-card .card-badge {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: linear-gradient(135deg, #EC4899 0%, #fb7185 100%);
+	color: #0A0A0A;
+	font-weight: 700;
+	font-size: 0.75rem;
+	padding: 6px 10px;
+	border-radius: 9999px;
+	border: 1px solid rgba(255,255,255,0.2);
+	box-shadow: 0 6px 18px rgba(236,72,153,0.25);
+}
+
+/* Bundle section visual (removed mid-page bundle section; keep pricing emphasis only) */
 
 /* Services responsive */
 @media (max-width: 768px) {
