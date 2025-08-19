@@ -511,6 +511,8 @@ p {
 	padding: 12px 14px;
 	border-radius: 10px;
 	border: 1px solid #1F2937;
+	width: 100%;
+	display: block;
 }
 
 .contact-form .btn { width: 100%; }
