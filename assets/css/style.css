@@ -980,6 +980,22 @@ p {
 
 .feature-list li { color: #E5E7EB; }
 
+/* Add check icons to feature points */
+.feature-list li {
+	position: relative;
+	padding-left: 1.75rem;
+}
+
+.feature-list li::before {
+	content: "\f00c"; /* Font Awesome check */
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	position: absolute;
+	left: 0;
+	top: 0.15rem;
+	color: #EC4899;
+}
+
 .service-detail-section { padding: 100px 0; }
 
 .service-header {
@@ -1004,6 +1020,68 @@ p {
 .service-detail-section .service-item h3 { color: #FFFFFF !important; }
 .service-detail-section .service-item .service-content p { color: #E5E7EB !important; }
 .service-detail-section .service-item .feature-list li { color: #E5E7EB !important; }
+
+/* Compact tag chips for lighter scannability */
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.tag {
+	padding: 6px 12px;
+	border-radius: 9999px;
+	background: #111111;
+	border: 1px solid #262626;
+	color: #E5E7EB;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+/* Collapsible service details */
+details.service-details {
+	margin-top: 1rem;
+	background: #151515;
+	border: 1px solid #262626;
+	border-radius: 12px;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+details.service-details > summary {
+	list-style: none;
+	cursor: pointer;
+	padding: 1rem 1.25rem;
+	user-select: none;
+	position: relative;
+	color: #FFFFFF;
+	font-weight: 600;
+}
+
+details.service-details > summary::marker { display: none; }
+details.service-details > summary::-webkit-details-marker { display: none; }
+
+/* Summary chevron */
+details.service-details > summary::after {
+	content: '\f107';
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
+	position: absolute;
+	right: 1.25rem;
+	top: 50%;
+	transform: translateY(-50%) rotate(0deg);
+	transition: transform 0.2s ease;
+}
+
+details.service-details[open] > summary::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+details.service-details .service-items-grid {
+	padding: 0 1.25rem 1.25rem 1.25rem;
+}
+
+/* (reverted) */
 
 /* Pricing */
 .pricing-section { padding: 100px 0; }
