@@ -1412,6 +1412,123 @@ details.service-details .service-items-grid {
 	font-style: italic;
 }
 
+/* Homepage Pricing Section */
+.pricing-section {
+	padding: 100px 0;
+	background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+.pricing-section .section-header h2 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-bottom: 1rem;
+	background: linear-gradient(135deg, #4A90E2 0%, #EC4899 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.pricing-section .section-header p {
+	font-size: 1.1rem;
+	color: #E5E7EB;
+	max-width: 600px;
+	margin: 0 auto 3rem auto;
+}
+
+/* Digital Marketing Services Section */
+.digital-marketing-section {
+	padding: 100px 0;
+}
+
+.marketing-services-grid {
+	gap: 2rem;
+	margin-top: 3rem;
+}
+
+.marketing-service-card {
+	padding: 2rem;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(74, 144, 226, 0.2);
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.marketing-service-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: left 0.5s ease;
+}
+
+.marketing-service-card:hover::before {
+	left: 100%;
+}
+
+.marketing-service-card:hover {
+	transform: translateY(-5px);
+	border-color: rgba(236, 72, 153, 0.4);
+	box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2);
+}
+
+.marketing-service-card .service-icon {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto 1.5rem auto;
+	background: linear-gradient(135deg, #4A90E2 0%, #EC4899 100%);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: #FFFFFF;
+	box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+}
+
+.marketing-service-card h3 {
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.marketing-service-card p {
+	color: #E5E7EB;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+.marketing-service-card .service-features {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.5rem 0;
+	text-align: left;
+}
+
+.marketing-service-card .service-features li {
+	color: #E5E7EB;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	margin-bottom: 0.5rem;
+	padding-left: 1.5rem;
+	position: relative;
+}
+
+.marketing-service-card .service-features li::before {
+	content: '✓';
+	position: absolute;
+	left: 0;
+	color: #EC4899;
+	font-weight: bold;
+}
+
 /* Bundle emphasis */
 .section-badge {
 	display: inline-block;
@@ -1495,6 +1612,25 @@ details.service-details .service-items-grid {
 	.btn-large {
 		padding: 14px 28px;
 		font-size: 1rem;
+	}
+	
+	.pricing-section .section-header h2 {
+		font-size: 2rem;
+	}
+	
+	.marketing-services-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+	
+	.marketing-service-card {
+		padding: 1.5rem;
+	}
+	
+	.marketing-service-card .service-icon {
+		width: 60px;
+		height: 60px;
+		font-size: 1.5rem;
 	}
 }
 
